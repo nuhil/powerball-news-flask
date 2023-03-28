@@ -1,11 +1,10 @@
-# import os
+import os
 import re
 import openai
 from flask import abort
 import logging
 
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 class WriteArticle:
