@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: "Powerball News Article Writer API"
+  description: "An API about writing Powerball related news articles"
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+components:
+  parameters:
+    use_ai:
+      name: "use_ai"
+      description: "Whether to use AI for the article writing"
+      in: query
+      required: False
+      schema:
+        type: boolean
+
+paths:
+  /powerball-article:
+    get:
+      operationId: "article.get"
+      tags:
+        - "Article"
+      summary: "Get a news article for Powerball"
+      parameters:
+        - $ref: "#/components/parameters/use_ai"
+      responses:
+        "200":
+          description: "Successfully got a news article"
+          content:
+            application/json:
+              schema:
+                type: object
+  /health:
+    get:
+      operationId: "article.health"
+      tags:
+        - "Health"
+      summary: "Check the health of the API server"
+      responses:
+        "200":
+          description: "Successfully got a 200 response"
