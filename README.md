@@ -22,7 +22,7 @@ You can follow either of the following strategies to try the API.
     cd powerball-news-flask
     pip install -r requirements.txt
     ```
-    The `requirements.txt` file is already inside the repository you just cloned.
+    The `requirements.txt` file is already inside the repository you just cloned.  
     4. To run the Flask app, in other words the API server, use the below command:
     ```sh
     python app.py
@@ -39,7 +39,7 @@ You can consume the APIs using any kind of client that is able to make typical R
 * **Using the built-in Swagger UI**  
 This app comes with a built-in Swagger UI from where you can try the endpoints without worrying about any client. Therefore, if you first install/start the API server (either in development mode or via Docker) and then open this URL http://127.0.0.1:8000/api/ui/ in your browser, you should see an UI like below:
 ![alt text](./img/swagger.png "Swagger UI")
-Here you can see two API endpoints are available in this APP. Both of them are GET request type. Calling the first one without any parameter simple let you know whether the API server is running fine or not. For example, if you click on the accordion icon (down arrow) of the first API, then click `Try it out` button, and finally click the `Execute` button, it will show the output like below:
+Here you can see two API endpoints are available in this app. Both of them are GET request type. Calling the first one without any parameter simply let you know whether the API server is running fine or not. For example, if you click on the accordion icon (down arrow) of the first API, then click `Try it out` button, and finally click the `Execute` button, it will show the output like below:
 ![alt text](./img/swagger_health.png "Health Check")
 Anyway, this is not the API we are interested in. Rather, lets try the second API endpoints `/powerball-article`. This endpoint optionally accepts a query parameter named `use_ai` which defaults to `True`. So, if you simply call this endpoint, it should return a news article (in JSON format) generated/written by OpenAI's API, based on the latest Powerball drawing. Below is a screenshot of a successful call.
 ![alt text](./img/swagger_use_ai.png "Use AI Writer")
@@ -49,7 +49,7 @@ curl -X 'GET' \
   'http://127.0.0.1:8000/api/powerball-article' \
   -H 'accept: application/json'
 ```
-* **Using Your Own Style**
+* **Using Your Own Style**  
 As just mentioned above, you can also use any client such as CURL, Postman, Browser addressbar if you wish. So, lets try the `/powerball-article` endpoint using CURL but this time providing the optional parameter `use_ai=false`. Use the below command from a Terminal that has CURL available.
 
 ```sh
